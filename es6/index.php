@@ -34,10 +34,11 @@
     const nomeRegex = /^[A-Za-zÀ-ÿ\s]+$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    let errori = [];
+    
     function validateForm() {
+        let errori = [];
         errore.innerHTML = "";
-        
+
         if (nome.value === "")
             errori.push("Errore: il campo nome non può essere vuoto");
         else if (!nomeRegex.test(nome.value)) {
@@ -49,7 +50,7 @@
         else if (!emailRegex.test(email.value)) {
             errori.push("Errore: il campo email ha caratteri non ammessi");
         }
-        if (messaggio.length > 300) {
+        if (messaggio.value.length > 300) {
             errori.push("Errore: Il messaggio può contenere al massimo 300 caratteri.");
         }
 

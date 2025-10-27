@@ -38,10 +38,8 @@
 
         }
         else{
-            echo("<p> Attenzione: ci sono errori nella compilazione del form</p>");
-            foreach($errori as $errore){
-                echo($errore);
-            }
+            header("Location:error.php");
+            exit;
         }
     ?>
 

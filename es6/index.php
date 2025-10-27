@@ -36,6 +36,7 @@
 
     
     function validateForm() {
+        /*
         let errori = [];
         errore.innerHTML = "";
 
@@ -58,8 +59,9 @@
             errore.innerHTML = errori.join("<br>");
             return false;
         }
-
+        */
         return true;
+
     }
 </script>
 

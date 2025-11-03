@@ -23,9 +23,8 @@ else{
 </head>
 <body>
     <?php
-    foreach($_SESSION as $c)
-        echo "<p> Sei stato qui $c volte </p>";
-    ?>
+    $contatore = $_SESSION["contatore"];
+        echo "<p> Sei stato qui $contatore volte </p>"?>
     <form method="post">
         <input type="submit" value="Azzera" name="azzera">
     </form>

@@ -1,5 +1,6 @@
 <?php 
     session_start();
+    $error = " ";
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +34,7 @@
                 <button class="btn" type="submit">Sign in</button>
                 <div id="formError" class="error" role="alert"></div>
             </div>
+            <?php echo $error?>
         </form>
     </main>
 
@@ -46,6 +48,9 @@
         $_SESSION["username"] = $username;
         header("Location: home.php");
         exit;
+    }
+    else{
+        $error = "Wrong password or username";
     }
     ?>
 </body>

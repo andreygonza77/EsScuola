@@ -15,10 +15,16 @@ if(!isset($_SESSION["username"])){
 <body>
     Welcome, admin!
     <form action="logout.php" method="post">
-        <input type="submit" value="Logout">
+        <input type="submit" value="Logout" name="logout">
     </form>
 
     <?php 
+    if(isset($_POST["logout"])){
+        if($_POST["logout"]){
+            header("Location: logout.php");
+            exit;
+        }
+        }
     ?>
 </body>
 </html>

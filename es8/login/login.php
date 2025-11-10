@@ -1,6 +1,23 @@
 <?php 
-    session_start();
-    $error = " ";
+session_start();
+
+$error = "";
+
+$username = "admin";
+$password = "1234";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $user = $_POST["username"] ?? "";
+    $pass = $_POST["password"] ?? "";
+
+    if ($user === $username && $pass === $password) {
+        $_SESSION["username"] = $username;
+        header("Location: home.php");
+        exit;
+    } else {
+        $error = "Wrong username or password";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -8,50 +25,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Login</title>
 </head>
 <body>
-    <main class="card" aria-labelledby="login-heading">
-        <h1 id="login-heading">Sign in to your account</h1>
-        <p class="sub">Enter your email and password to continue.</p>
+<div class="container">
+    <main class="card p-4 mt-5">
+        <h1>Sign in to your account</h1>
+        <p>Enter your email and password to continue.</p>
 
         <form method="post" id="loginForm" novalidate>
-            <div class="row">
+            <div class="mb-3">
                 <label for="username">Username</label>
-                <div >
-                   <input id="username" name="username" type="username" autocomplete="username" required placeholder="Example"/>
-                </div>
+                <input id="username" name="username" class="form-control" required placeholder="Example" />
             </div>
 
-            <div class="row">
+            <div class="mb-3">
                 <label for="password">Password</label>
-                <div >
-                    <input id="password" name="password" type="password" autocomplete="current-password" required placeholder="••••••••" />
-                </div>
+                <input id="password" name="password" type="password" class="form-control" required placeholder="••••••••" />
             </div>
 
-            <div class="row">
-                <button class="btn" type="submit">Sign in</button>
-                <div id="formError" class="error" role="alert"></div>
-            </div>
-            <?php echo $error?>
+            <button class="btn btn-primary" type="submit">Sign in</button>
+
+            <?php if (!empty($error)): ?>
+                <div class="alert alert-danger mt-3"><?php echo $error; ?></div>
+            <?php endif; ?>
         </form>
     </main>
-
-    <?php
-    $username = "admin";
-    $password = "1234";
-    $user = isset($_POST["username"]) ? $_POST["username"] : " ";
-    $pass = isset($_POST["password"]) ? $_POST["password"] : " ";
-
-    if($user === $username && $pass === $password){
-        $_SESSION["username"] = $username;
-        header("Location: home.php");
-        exit;
-    }
-    else{
-        $error = "Wrong password or username";
-    }
-    ?>
+</div>
 </body>
 </html>

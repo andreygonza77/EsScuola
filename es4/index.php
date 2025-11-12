@@ -8,7 +8,7 @@
     <title>Esercizio 4</title>
 </head>
 
-<body>
+<body>   
     <?php
         $utenti = isset($_POST["utenti"]) ? $_POST["utenti"] : 0; 
         $guadagni = isset($_POST["guadagni"]) ? $_POST["guadagni"] : 0;

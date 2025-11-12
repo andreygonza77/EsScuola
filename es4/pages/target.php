@@ -8,7 +8,7 @@
     <title>Tabella</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container"> 
         <table class="table text-center mt-3">
         <tr>
             <th colspan="3">Dati inseriti nel form</th>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esercizio 3</title>
 </head>
-<body>
+<body> 
     <form action="pages/target.php" method="get">
     <label for="nome">Nome:</label><br>
     <input type="text" name="nome" value=""><br>

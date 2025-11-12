@@ -9,7 +9,7 @@
 </head>
 <body>
     <?php 
-        $nome = $_POST["nome"];
+        $nome = $_POST["nome"]; 
         $cognome = $_POST["cognome"];
         $numeroTavolo = $_POST["numeroTavolo"];
         $orario = $_POST["orario"];

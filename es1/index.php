@@ -11,7 +11,7 @@
     <?php
     $const = 100;
 
-    $array = array();
+    $array = array(); 
     for ($i=0; $i < $const; $i++) { 
         $contatore = 0;
         if($i % 3 == 0)

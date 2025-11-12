@@ -8,7 +8,7 @@
     <title>Risultati</title>
 </head>
 <body>
-    <?php
+    <?php 
     $utentiInseriti = $_POST["contatore"];
     $guadagnoTotale = $_POST["guadagno"];
 
